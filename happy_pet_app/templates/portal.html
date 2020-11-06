@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Pet Portal</h3>
+    <div class="pet_info">
+        <p>
+        Name: {{pet.name}}<br />
+        Species: {{pet.species}}<br />
+        Breed: {{pet.breed}}<br />
+        Birthday: {{pet.date_of_birth}}<br />
+        Notes: {{pet.comments}}<br />
+        <select name="status">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+        </select> <!--Need to remember choice request.session?-->
+        </p>
+    </div>
+    <div class="">
+        <p>
+            Health and Lifestyle
+        </p>
+        <a href="">Immunizations</a> <br />
+        <a href="">Medical history</a> <br />
+        <a href="/daily_log/{{pet.id}}">Daily Log</a>
+    </div>
+
+    <a href="/dashboard">Return to your dashboard</a>
+</body>
+</html>

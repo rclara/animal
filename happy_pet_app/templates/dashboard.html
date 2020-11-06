@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner dashboard</title>
+</head>
+<body>
+    <a href="/logout">Logout</a>
+    <h3>Hey {{logged_user.first_name}}, Welcome back to your dashboard!</h3>
+    <div class="user_info">
+        Name: {{logged_user.first_name}} {{logged_user.last_name}} <br />
+        Email: {{logged_user.email}} <br />
+        Phone: {{logged_user.phone}} <br />
+        <form action="/edit" method="GET">
+            <button type="submit">Edit</button>
+        </form>
+    </div>
+    <div class="pets">
+        <p>
+            <a href="/add_pet">Add pet</a>
+        </p>
+        <h4>
+            Pets
+        </h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in pets%}
+                    {%if i.owner.id == logged_user.id %}
+                    <tr>
+                        <td>
+                            <a href="/pet_portal/{{i.id}}">{{i.name}}</a>
+                        </td>
+                    </tr>
+                    {%endif%}
+            {%endfor%}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

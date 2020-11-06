@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration Page</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="login">
+                <h2>Login</h2>
+                <form action="/login" method="POST">
+                    {% csrf_token%}
+                    Email: <input type="text" name="login_email"><br />
+                    Password: <input type="password" name="login_password"><br />
+                    <button type="submit">Log in now</button>
+                </form>
+                <p>
+                    <a href="/forgot">Forgot password?</a>
+                </p>
+                <p>
+                    Don't have account?<br />
+                    <a href="/">Create Account</a>
+                </p>
+            </div>
+    </div>
+        </div>
+    </body>
+</html>

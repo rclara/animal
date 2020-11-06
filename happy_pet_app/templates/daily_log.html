@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'css/calendar.css' %}">
+  </head>
+  <body>
+    <a href="/pet_portal/{{pet.id}}">{{pet.name}}'s Portal</a>
+
+    <div class="calendar">
+        <div class="col leftCol">
+            <div class="content">
+                <h1 class="date">Monday<span>April 6th</span></h1>
+            
+            <div class="notes">
+                <p>
+                    <input type="text" value="" placeholder="Add notes about {{pet.name}}" />
+                    <a href="#" title="Add note" class="addNote animate">+</a>
+                </p>
+                <ul class="noteList">
+                    <li>LOOP THROUGH NOTES HERE<a href="#" title="Remove note" class="removeNote animate">x</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="col rightCol">
+            <div class="content">
+                <h2 class="year">2020</h2>
+                <ul> 
+                    <!--href should direct to notes for that date request.session 
+                    when clicked. Need to add jQuery? -->
+                    <li><a href="#" title="Jan" data-value="1">Jan</a></li>
+                    <li><a href="#" title="Jan" data-value="2">Feb</a></li>
+                    <li><a href="#" title="Jan" data-value="3">Mar</a></li>
+                    <li><a href="#" title="Jan" data-value="4" class="selected">Apr</a></li>
+                    <li><a href="#" title="Jan" data-value="5">May</a></li>
+                    <li><a href="#" title="Jan" data-value="6">Jun</a></li>
+                    <li><a href="#" title="Jan" data-value="7">Jul</a></li>
+                    <li><a href="#" title="Jan" data-value="8">Aug</a></li>
+                    <li><a href="#" title="Jan" data-value="9">Sep</a></li>
+                    <li><a href="#" title="Jan" data-value="10">Oct</a></li>
+                    <li><a href="#" title="Jan" data-value="11">Nov</a></li>
+                    <li><a href="#" title="Jan" data-value="12">Dec</a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <ul class="weekday">
+                    <li><a href="#" title="Mon" data-value="1">Mon</a></li>
+                    <li><a href="#" title="Tue" data-value="2">Tue</a></li>
+                    <li><a href="#" title="Wed" data-value="3">Wed</a></li>
+                    <li><a href="#" title="Thu" data-value="4">Thu</a></li>
+                    <li><a href="#" title="Fri" data-value="5">Fri</a></li>
+                    <li><a href="#" title="Sat" data-value="6">Sat</a></li>
+                    <li><a href="#" title="Sun" data-value="7">Sun</a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <ul class="days">
+                    <script>
+                        //months = {
+                        //    "January":31, "February":28, "March":31,
+                        //    "April":30, "May":31, "June":30, "July":31,
+                        //    "August":31, "September":30, "October":31,
+                        //    "November":30, "December":31
+                        //}
+
+                    </script>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+  </body>
+</html>

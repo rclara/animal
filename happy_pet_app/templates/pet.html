@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD PET FORM</title>
+</head>
+<body>
+    <div class="pet_info">
+        {%if messages%}
+        <ul class="messages">
+            {%for message in messages%}
+                {%if 'login' not in message.tags%}
+                <li {%if messsage.tags%} class="{{messages.tags}}" {%endif%}>
+                    {{message}}
+                </li>
+                {%endif%}
+            {%endfor%}
+        </ul>
+        {%endif%}
+        <h3>New Pet!</h3>
+        <form action="/add_pet" method="POST">
+        {%csrf_token%}
+        <p>
+            Name:
+            <input type="text" name="name">
+        </p>
+        <p>
+            Species:
+            <input type="text" name="species">
+        </p>
+        <p>
+            Breed:
+            <input type="text" name="breed">
+        </p>
+        <p>
+            Birthday:
+            <input type="datetime" name="date_of_birth">
+        </p>
+        <p>
+            Comments:
+            <textarea placeholder="Feel free to add 'quirks' your pet may have here. ie. 'Toby is feisty when picked up'" name="comments"></textarea>
+        </p>
+        <button type="submit">Add!</button>
+        </form>
+        <form action="/dashboard">
+            <button type="submit">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>
